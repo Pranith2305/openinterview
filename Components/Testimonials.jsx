@@ -7,42 +7,37 @@ const testimonials = [
     text: "You made it so simple. My new site is so much faster and easier to work with than my old site.",
     author: "Jenny Wilson",
     role: "Co-founder, Appson",
-    avatar: "",
   },
   {
     id: 2,
     text: "The experience has been excellent. The platform's features are intuitive.",
     author: "John Doe",
     role: "CEO, TechWorks",
-    avatar: "",
   },
   {
     id: 3,
     text: "I was able to create an amazing site in no time. The customer service is excellent.",
     author: "Alice Johnson",
     role: "Marketing Head, GlobaTech",
-    avatar: "",
   },
   {
     id: 4,
     text: "The new interface has made a significant difference in how our team collaborates.",
     author: "Michael Smith",
     role: "Product Manager, InnovateX",
-    avatar: "",
   },
   {
     id: 5,
     text: "This platform revolutionized our workflow. Everything is faster, clearer, and just better.",
     author: "Emma Davis",
     role: "CTO, FutureTech",
-    avatar: "",
   },
 ];
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
-  
+
   const cardsPerPage = 3; // Number of cards to display at once
   const totalCards = testimonials.length;
   const totalGroups = Math.ceil(totalCards / cardsPerPage);
@@ -65,10 +60,16 @@ export default function Testimonials() {
 
   if (!isMounted) return null;
 
+  // Dynamically slice testimonials for current group
+  const currentGroup = testimonials.slice(
+    currentIndex * cardsPerPage,
+    currentIndex * cardsPerPage + cardsPerPage
+  );
+
   return (
     <div className="w-full max-w-6xl mx-auto px-8 py-12 relative overflow-hidden">
       {/* Title Section */}
-      <div className="mb-8 text-left">
+      <div className="mb-8 text-left px-24">
         <div className="text-white bg-purple-600 p-2 rounded-lg font-medium mb-2 inline-block">
           <span className="text-white">✨</span> Our Testimonials
         </div>
@@ -83,7 +84,7 @@ export default function Testimonials() {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="absolute top-1/2 transform -translate-y-1/2 right-4 bottom-1 flex flex-row space-x-4 ">
+      <div className="absolute top-1/2 transform -translate-y-1/2 right-4 bottom-1 flex flex-row space-x-4 px-24 ">
         <button
           onClick={handlePrevious}
           className="w-12 h-12 bg-white rounded-full border shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
@@ -102,44 +103,40 @@ export default function Testimonials() {
       </div>
 
       {/* Testimonial Cards */}
-      <div className="relative overflow-hidden mt-4">
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{
-            transform: `translateX(-${(currentIndex * 100) / totalGroups}%)`,
-            width: `${(totalCards / cardsPerPage) * 100}%`, // Full width of all groups
-          }}
-        >
-          {testimonials.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className="w-1/3 px-4 flex-shrink-0" // Ensure each card is one-third of the width
-            >
-              <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 h-[200px] flex flex-col justify-between">
-                {/* Testimonial Text */}
-                <p className="text-gray-700 text-base italic mb-4 leading-relaxed flex-1">
-                  "{testimonial.text}"
-                </p>
+      <div className="relative overflow-hidden mt-4 pl-24">
+      <div className="flex transition-transform mb-4 duration-500 ease-in-out justify-center">
+  {currentGroup.map((testimonial) => (
+    <div
+      key={testimonial.id}
+      className="w-1/3 px-4 flex-shrink-0" // Wider width
+    >
+      <div className="bg-white rounded-2xl p-5 shadow-md border border-gray-200 h-[160px] flex flex-col justify-between">
+        {/* Testimonial Text */}
+        <p className="text-gray-700 mb-3 leading-relaxed flex-1 text-sm">
+          "{testimonial.text}"
+        </p>
 
-                {/* Author Section */}
-                <div className="flex items-center space-x-4 mt-auto">
-                  <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center">
-                    <span className="text-lg font-bold text-blue-700">
-                      {testimonial.author.split(" ")[0][0]}
-                      {testimonial.author.split(" ")[1][0]}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[#1a365d] text-lg">
-                      {testimonial.author}
-                    </h3>
-                    <p className="text-gray-500 text-sm">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
+        {/* Author Section */}
+        <div className="flex items-center space-x-4 mt-auto">
+          <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+            <span className="text-md font-bold text-blue-700">
+              {testimonial.author
+                .split(" ")
+                .map((word) => word[0])
+                .join("")}
+            </span>
+          </div>
+          <div>
+            <h3 className="font-semibold text-[#1a365d] text-base">
+              {testimonial.author}
+            </h3>
+            <p className="text-gray-500 text-xs">{testimonial.role}</p>
+          </div>
         </div>
+      </div>
+    </div>
+  ))}
+</div>
       </div>
     </div>
   );

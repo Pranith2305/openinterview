@@ -141,8 +141,10 @@ export default function App() {
           1500s, when an unk
         </p>
       </div>
+      <div className="mb-12">
       <RequirementCards />
-      <div className="p-24 ">
+      </div>
+      <div className="mb-12">
       <Testimonials />
       </div>
       {/* Faq Section */}
