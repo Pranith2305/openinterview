@@ -32,41 +32,41 @@ export default function App() {
 
       {/* Background Section */}
       <div
-        className="bg-[#7C3AED] min-h-screen pt-40 pb-[200px] px-8 md:px-16 rounded-xl mx-4 md:mx-8 mt-4 relative overflow-hidden"
-        style={{
-          background: `
-            #7C3AED,
-            linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: "40px 40px",
-          backgroundPosition: "top",
-          backgroundAttachment: "fixed",
-          zIndex: 0,
-        }}
-      >
-        <div className="max-w-[1200px] mx-auto relative z-10">
-          {/* Version Badge */}
-          <div className="flex justify-center mb-8">
-            <div className="bg-white px-4 py-1 rounded-full text-base font-medium flex items-center gap-2">
-            <Zap className="bg-purple-700 text-white w-4 h-4 rounded-full p-2" />
-              Pihu v13
-            </div>
-          </div>
+  className="bg-[#7C3AED] min-h-screen pt-40 pb-[200px] px-8 md:px-16 rounded-xl mx-4 md:mx-8 mt-4 relative overflow-hidden"
+  style={{
+    background: `
+      #7C3AED,
+      linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
+    `,
+    backgroundSize: "40px 40px",  // grid size
+    backgroundPosition: "top",    // position at the top
+    backgroundAttachment: "fixed",  // fixed background scrolling
+    zIndex: 0,
+  }}
+>
+  <div className="max-w-[1200px] mx-auto relative z-10">
+    {/* Version Badge */}
+    <div className="flex justify-center mb-8">
+      <div className="bg-white px-4 py-1 rounded-full text-base font-medium flex items-center gap-2">
+        <Zap className="bg-purple-700 text-white w-4 h-4 rounded-full p-2" />
+        Pihu v13
+      </div>
+    </div>
 
-          {/* Main Content */}
-          <div className="text-center mb-6"> {/* Reduced margin */}
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
-              Welcome to Your Interview Journey
-              <br />
-              with OpenIntervue
-            </h1>
-            <p className="text-white/80">
-              Let's make sure you have everything you need before we schedule
-              your interview
-            </p>
-          </div>
-        </div>
+    {/* Main Content */}
+    <div className="text-center mb-6">
+      <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        Welcome to Your Interview Journey
+        <br />
+        with OpenIntervue
+      </h1>
+      <p className="text-white/80">
+        Let's make sure you have everything you need before we schedule
+        your interview
+      </p>
+    </div>
+  </div>
 
   {/* Add the fading grid effect */}
   <div
@@ -76,9 +76,9 @@ export default function App() {
         linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
       `,
-      backgroundSize: '40px 40px',
-      backgroundPosition: 'top',
-      opacity: 0.3, // adjust opacity to make grid light
+      backgroundSize: '40px 40px',  // grid size
+      backgroundPosition: 'top',    // position at the top
+      opacity: 0.3,  // adjust opacity for light grid effect
       zIndex: -1
     }}
   />
@@ -111,7 +111,7 @@ export default function App() {
 
 
       {/*set up section */}
-      <div className="w-full max-w-6xl mx-auto p-6 px-24">
+      <div className="w-full max-w-6xl mx-auto p-6 px-24 mt-8">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="text-white bg-purple-600 p-2 rounded-lg font-medium mb-2 inline-block">
@@ -129,7 +129,7 @@ export default function App() {
         </div>
       </div>
 
-      <div className="text-center mb-6">
+      <div className="text-center mb-6 mt-12">
         <div className="text-white bg-purple-600 p-2 rounded-lg font-medium mb-2 inline-block">
           <span className="text-white">✨</span> Setup Requirement
         </div>
@@ -141,10 +141,19 @@ export default function App() {
           1500s, when an unk
         </p>
       </div>
-     <RequirementCards/>
+      <RequirementCards />
+      <div className="p-24 ">
       <Testimonials />
-      <FaqSection />
-      <Footer />
+      </div>
+      {/* Faq Section */}
+      <div className="mb-12 p-24">
+        <FaqSection />
+      </div>
+
+      {/* Footer Section */}
+        <div className="mb-2">
+        <Footer />
+        </div>
     </div>
   );
 }
