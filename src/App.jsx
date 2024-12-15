@@ -1,13 +1,5 @@
 import { Play } from "lucide-react";
 import { Laptop, Wifi, ChromeIcon as Browser } from "lucide-react";
-import {
-  Video,
-  Mic,
-  Volume2,
-  FileCheck,
-  ArrowUpRight,
-  Check,
-} from "lucide-react";
 import Testimonials from "../Components/Testimonials";
 import FaqSection from "../Components/Faq";
 import Footer from "../Components/Footer";
@@ -16,47 +8,49 @@ import VerificationCards from "../Components/VerificationCard";
 export default function App() {
   return (
     <div className="min-h-screen">
-      <div 
-  className="bg-[#7C3AED] pt-16 pb-[200px] px-8 md:px-16 rounded-xl mx-4 md:mx-8 mt-4 relative overflow-hidden"
-  style={{
-    background: `
-      #7C3AED,
-      linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
-    `,
-    backgroundSize: '40px 40px',
-    backgroundPosition: 'top',
-    backgroundAttachment: 'fixed',
-    zIndex: 0
-  }}
->
-  <div className="max-w-[1200px] mx-auto relative z-10">
-    {/* Header */}
-    <div className="max-w-[600px] mx-auto mb-12">
-      <div className="bg-white rounded-lg py-2 px-4 flex justify-between items-center shadow-sm border">
-        <div className="flex items-center gap-2">
-          <img
-            src="src\assets\profile-v1.png"
-            alt="OpenIntervue Logo"
-            width={24}
-            height={24}
-            className="w-6 h-6"
-          />
-          <span className="font-semibold">OpenIntervue</span>
+       {/* Sticky Header */}
+       <div className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-8">
+        <div className="max-w-[600px] mx-auto">
+          <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg py-2 px-4 flex justify-between items-center shadow-sm border transition-all duration-300">
+            <div className="flex items-center gap-2">
+              <img
+                src="/src\assets\profile-v1.png"
+                alt="OpenIntervue Logo"
+                width={24}
+                height={24}
+                className="w-6 h-6"
+              />
+              <span className="font-semibold">OpenIntervue</span>
+            </div>
+            <button className="bg-[#8B5CF6] text-white rounded-lg px-4 py-1 text-sm border">
+              Help
+            </button>
+          </div>
         </div>
-        <button className="bg-[#8B5CF6] text-white rounded-lg px-4 py-1 text-sm border">
-          Help
-        </button>
       </div>
-    </div>
 
-    {/* Version Badge */}
-    <div className="flex justify-center mb-8">
-      <div className="bg-white px-4 py-1 rounded-full text-base font-medium flex items-center gap-2">
-        <div className="w-4 h-4 bg-[#8B5CF6] rounded-full"></div>
-        Pihu v13
-      </div>
-    </div>
+     <div 
+       className="bg-[#7C3AED] pt-40 pb-[250px] px-8 md:px-16 rounded-xl mx-4 md:mx-8 mt-4 relative overflow-hidden"
+       style={{
+         background: `
+           #7C3AED,
+           linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+           linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px)
+         `,
+         backgroundSize: '40px 40px',
+         backgroundPosition: 'top',
+         backgroundAttachment: 'fixed',
+         zIndex: 0
+       }}
+     >
+       <div className="max-w-[1200px] mx-auto relative z-10">
+         {/* Version Badge */}
+         <div className="flex justify-center mb-8">
+           <div className="bg-white px-4 py-1 rounded-full text-base font-medium flex items-center gap-2">
+             <div className="w-4 h-4 bg-[#8B5CF6] rounded-full"></div>
+             Pihu v13
+           </div>
+         </div>
 
     {/* Main Content */}
     <div className="text-center mb-12">
