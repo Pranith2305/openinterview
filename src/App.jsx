@@ -1,20 +1,29 @@
 import { Play } from "lucide-react";
-import { Laptop, Wifi, ChromeIcon as Browser } from 'lucide-react'
-import { Video, Mic, Volume2, FileCheck, ArrowUpRight, Check } from 'lucide-react'
+import { Laptop, Wifi, ChromeIcon as Browser } from "lucide-react";
+import {
+  Video,
+  Mic,
+  Volume2,
+  FileCheck,
+  ArrowUpRight,
+  Check,
+} from "lucide-react";
 import Testimonials from "../Components/Testimonials";
 import FaqSection from "../Components/Faq";
 import Footer from "../Components/Footer";
+import VerificationCards from "../Components/VerificationCard";
 
 export default function App() {
   const gridItems = [
     {
       icon: Video,
-      title: 'Real Time Face Detection',
-      caption: 'Capture Faces Clearly for Accurate Real-Time Detection and Recognition.',
+      title: "Real Time Face Detection",
+      caption:
+        "Capture Faces Clearly for Accurate Real-Time Detection and Recognition.",
       content: (
         <div className="relative bg-gray-50 rounded-lg p-4">
-          <img 
-            src="/placeholder.svg?height=240&width=400" 
+          <img
+            src="/placeholder.svg?height=240&width=400"
             alt="Face Detection Demo"
             className="w-full rounded-lg"
           />
@@ -29,20 +38,24 @@ export default function App() {
             </div>
           </div>
         </div>
-      )
+      ),
     },
     {
       icon: Mic,
-      title: 'System Check',
-      caption: 'Ensure your device has a working camera, microphone and have a stable internet connection.',
+      title: "System Check",
+      caption:
+        "Ensure your device has a working camera, microphone and have a stable internet connection.",
       content: (
         <div className="space-y-3">
           {[
-            { label: 'Camera', icon: Video },
-            { label: 'Microphone', icon: Mic },
-            { label: 'Speaker', icon: Volume2 }
+            { label: "Camera", icon: Video },
+            { label: "Microphone", icon: Mic },
+            { label: "Speaker", icon: Volume2 },
           ].map((item, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg p-3 flex items-center justify-between">
+            <div
+              key={index}
+              className="bg-gray-50 rounded-lg p-3 flex items-center justify-between"
+            >
               <div className="flex items-center space-x-2">
                 <item.icon className="w-5 h-5 text-gray-700" />
                 <span>{item.label}</span>
@@ -53,12 +66,13 @@ export default function App() {
             </div>
           ))}
         </div>
-      )
+      ),
     },
     {
       icon: Volume2,
-      title: 'Test Audio',
-      caption: 'Please read this aloud clearly: The quick brown fox jumps over the lazy dog',
+      title: "Test Audio",
+      caption:
+        "Please read this aloud clearly: The quick brown fox jumps over the lazy dog",
       content: (
         <div className="space-y-4">
           <div className="flex items-center space-x-4">
@@ -74,21 +88,21 @@ export default function App() {
           </div>
           <div className="h-24 bg-purple-100 rounded-lg overflow-hidden">
             <svg viewBox="0 0 100 20" className="w-full h-full">
-              <path 
-                d="M0,10 Q5,5 10,10 T20,10 T30,10 T40,10 T50,10 T60,10 T70,10 T80,10 T90,10 T100,10" 
-                fill="none" 
-                stroke="#9333EA" 
+              <path
+                d="M0,10 Q5,5 10,10 T20,10 T30,10 T40,10 T50,10 T60,10 T70,10 T80,10 T90,10 T100,10"
+                fill="none"
+                stroke="#9333EA"
                 strokeWidth="0.5"
               />
             </svg>
           </div>
         </div>
-      )
+      ),
     },
     {
       icon: FileCheck,
-      title: 'Terms And Conditions',
-      caption: 'I agree with the Terms & Conditions and Privacy Policy',
+      title: "Terms And Conditions",
+      caption: "I agree with the Terms & Conditions and Privacy Policy",
       content: (
         <div className="bg-gray-50 p-4 rounded-lg">
           <div className="flex items-center space-x-3 mb-4">
@@ -103,10 +117,10 @@ export default function App() {
             <div className="h-2 bg-gray-200 rounded-full w-1/2"></div>
           </div>
         </div>
-      )
-    }
-  ]
-  
+      ),
+    },
+  ];
+
   const prospects = [
     {
       name: "Jerome Bell",
@@ -191,7 +205,7 @@ export default function App() {
         </div>
       </div>
 
-      {/* Prospect List */}
+      {/* Video Player */}
       <div className="max-w-[1200px] mx-auto px-8 md:px-16 -mt-[150px] flex justify-center">
         <div
           className="w-full max-w-4xl aspect-[16/9] relative"
@@ -212,82 +226,65 @@ export default function App() {
         </div>
       </div>
 
-        {/*set up section */}
-        <div className="w-full max-w-6xl mx-auto p-6 px-24">
-      {/* Header */}
-      <div className="text-center mb-8">
-      <div className="text-white bg-purple-600 p-2 rounded-lg font-medium mb-2 inline-block">
-        <span className="text-white">✨</span> Setup Interview
-        </div>
-        <h1 className="text-[#1a365d] text-3xl font-bold mb-3">
-          Ace Your Interview With The Right Setup
-        </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto text-sm">
-          Ensure Your Setup Meets All Interview Requirements for Success
-        </p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {gridItems.map((item, index) => (
-          <div key={index} className="bg-slate-100 rounded-xl p-6 shadow-sm border border-gray-100 relative">
-            <div className="flex flex-col">
-              <div className="flex items-start mb-4">
-                <div className="bg-gray-50 p-3 rounded-xl">
-                  <item.icon className="w-5 h-5 text-[#1a365d]" />
-                </div>
-              </div>
-              <h2 className={`text-xl font-bold mb-2 text-[#1a365d]`}>
-                {item.title}
-              </h2>
-              <p className="text-gray-600 mb-6">
-                {item.caption}
-              </p>
-            </div>
-            <div className="absolute bottom-6  rounded-full p-2 border border-purple-600 hover:bg-purple-600">
-              <ArrowUpRight className="w-5 h-5 text-purple-600 hover:text-white " />
-            </div>
+      {/*set up section */}
+      <div className="w-full max-w-6xl mx-auto p-6 px-24">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <div className="text-white bg-purple-600 p-2 rounded-lg font-medium mb-2 inline-block">
+            <span className="text-white">✨</span> Setup Interview
           </div>
-        ))}
-      </div>
+          <h1 className="text-[#1a365d] text-3xl font-bold mb-3">
+            Ace Your Interview With The Right Setup
+          </h1>
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm">
+            Ensure Your Setup Meets All Interview Requirements for Success
+          </p>
+        </div>
+        <div className="min-h-screen p-6">
+          <VerificationCards />
+        </div>
       </div>
 
       <div className="text-center mb-6">
-      <div className="text-white bg-purple-600 p-2 rounded-lg font-medium mb-2 inline-block">
-        <span className="text-white">✨</span> Setup Requirement
-        
+        <div className="text-white bg-purple-600 p-2 rounded-lg font-medium mb-2 inline-block">
+          <span className="text-white">✨</span> Setup Requirement
         </div>
         <h2 className="text-[#1a365d] text-2xl font-bold mb-2">
           Your Interview Right Setup
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto text-sm">
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unk
+          Lorem Ipsum has been the industry's standard dummy text ever since the
+          1500s, when an unk
         </p>
       </div>
 
       {/* Requirements Cards */}
       <div className="w-full max-w-4xl mx-auto px-4">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {['Laptop', 'Internet', 'Browser'].map((item, index) => (
-          <div key={item} className="bg-white rounded-lg p-4 shadow-sm border border-gray-100 flex items-center space-x-4">
-            <div className="bg-purple-100/50 w-10 h-10 rounded-lg flex items-center justify-center">
-              {index === 0 && <Laptop className="w-5 h-5 text-purple-600" />}
-              {index === 1 && <Wifi className="w-5 h-5 text-purple-600" />}
-              {index === 2 && <Browser className="w-5 h-5 text-purple-600" />}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {["Laptop", "Internet", "Browser"].map((item, index) => (
+            <div
+              key={item}
+              className="bg-white rounded-lg p-4 shadow-sm border border-gray-100 flex items-center space-x-4"
+            >
+              <div className="bg-purple-100/50 w-10 h-10 rounded-lg flex items-center justify-center">
+                {index === 0 && <Laptop className="w-5 h-5 text-purple-600" />}
+                {index === 1 && <Wifi className="w-5 h-5 text-purple-600" />}
+                {index === 2 && <Browser className="w-5 h-5 text-purple-600" />}
+              </div>
+              <div>
+                <h3 className="font-semibold text-[#1a365d] text-sm">{item}</h3>
+                <p className="text-gray-500 text-xs">
+                  Streamline task monitoring for productivity.
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="font-semibold text-[#1a365d] text-sm">{item}</h3>
-              <p className="text-gray-500 text-xs">
-                Streamline task monitoring for productivity.
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       </div>
 
-      
-      <Testimonials/>
-      <FaqSection/>
-      <Footer/>
+      <Testimonials />
+      <FaqSection />
+      <Footer />
     </div>
   );
 }

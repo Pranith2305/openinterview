@@ -60,7 +60,7 @@ export default function FaqSection() {
               </span>
               {activeIndex === index ? (
                 <svg
-                  className="h-6 w-6 text-purple-600 flex-shrink-0"
+                  className="h-6 w-6 flex-shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -74,7 +74,7 @@ export default function FaqSection() {
                 </svg>
               ) : (
                 <svg
-                  className="h-6 w-6 text-purple-600 flex-shrink-0"
+                  className="h-6 w-6 flex-shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
