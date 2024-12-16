@@ -18,7 +18,7 @@ export default function FaceDetectionCard() {
         </h2>
         
         {/* Description */}
-        <p className="text-[#4a5568] text-lg leading-relaxed mb-8">
+        <p className="text-[#4a5568] text-lg leading-relaxed mb-8 pb-6">
           Capture Faces Clearly for Accurate Real-Time Detection and Recognition.
         </p>
 
@@ -27,7 +27,7 @@ export default function FaceDetectionCard() {
           
           {/* Image */}
           <img
-            src="/placeholder.svg?height=300&width=400"
+            src="/src\assets\a-business-man-stands-against-white-background-with-his-arms-crossed-ai-generative-photo.jpg"
             alt="Face Detection Preview"
             className="w-full h-full object-cover"
           />
@@ -51,8 +51,8 @@ export default function FaceDetectionCard() {
         </div>
 
         {/* Bottom Call-to-Action Button */}
-        <div className="mt-8 flex justify-end">
-          <div className="w-12 h-12 rounded-full border border-purple-500 flex items-center justify-center group-hover:bg-purple-500 transition-all duration-300">
+        <div className="absolute bottom-8 left-8">
+          <div className="w-10 h-10 rounded-full border border-purple-500 flex items-center justify-center group-hover:bg-purple-500 transition-all duration-300">
             <ArrowUpRight className="w-5 h-5 text-purple-500 group-hover:text-white transition-colors duration-300" />
           </div>
         </div>
