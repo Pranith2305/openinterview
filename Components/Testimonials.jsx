@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
   {
@@ -67,76 +67,80 @@ export default function Testimonials() {
   );
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-8 py-12 relative overflow-hidden">
+    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative overflow-hidden">
       {/* Title Section */}
-      <div className="mb-8 text-left px-24">
+      <div className="mb-8 text-left px-4 sm:px-8 lg:px-24">
         <div className="text-white bg-purple-600 p-2 rounded-lg font-medium mb-2 inline-block">
           <span className="text-white">✨</span> Our Testimonials
         </div>
-        <h2 className="text-[#1a365d] text-4xl font-bold mb-4">
+        <h2 className="text-[#1a365d] text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
           What Our Customers Are Saying
         </h2>
-        <p className="text-gray-600">
+        <p className="text-gray-600 text-sm sm:text-base">
           Read testimonials from our satisfied customers and learn how SAP has
-          <br />
           transformed their project management experience.
         </p>
       </div>
 
       {/* Navigation Buttons */}
-      <div className="absolute top-1/2 transform -translate-y-1/2 right-4 bottom-1 flex flex-row space-x-4 px-24 ">
+      <div className="absolute top-1/2 transform -translate-y-1/2 right-4 bottom-1 flex flex-row space-x-2 sm:space-x-4 px-4 sm:px-8 lg:px-24">
         <button
           onClick={handlePrevious}
-          className="w-12 h-12 bg-white rounded-full border shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
+          className="w-8 h-8 sm:w-12 sm:h-12 bg-white rounded-full border shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
           aria-label="Previous testimonial"
         >
-          <ChevronLeft className="w-6 h-6 text-gray-600" />
+          <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6 text-gray-600" />
         </button>
 
         <button
           onClick={handleNext}
-          className="w-12 h-12 bg-white rounded-full border shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
+          className="w-8 h-8 sm:w-12 sm:h-12 bg-white rounded-full border shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors"
           aria-label="Next testimonial"
         >
-          <ChevronRight className="w-6 h-6 text-gray-600" />
+          <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6 text-gray-600" />
         </button>
       </div>
 
       {/* Testimonial Cards */}
-      <div className="relative overflow-hidden mt-4 pl-24">
-      <div className="flex transition-transform mb-4 duration-500 ease-in-out justify-center">
-  {currentGroup.map((testimonial) => (
-    <div
-      key={testimonial.id}
-      className="w-1/3 px-4 flex-shrink-0" // Wider width
-    >
-      <div className="bg-white rounded-2xl p-5 shadow-md border border-gray-200 h-[160px] flex flex-col justify-between">
-        {/* Testimonial Text */}
-        <p className="text-gray-700 mb-3 leading-relaxed flex-1 text-sm">
-          "{testimonial.text}"
-        </p>
+      <div className="relative overflow-hidden mt-4">
+        <div 
+          className="flex transition-transform duration-500 ease-in-out" 
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`
+          }}
+        >
+          {testimonials.map((testimonial) => (
+            <div
+              key={testimonial.id}
+              className="w-full sm:w-1/2 lg:w-1/3 px-2 sm:px-4 flex-shrink-0 mb-4 sm:mb-0"
+            >
+              <div className="bg-white rounded-2xl p-4 sm:p-5 shadow-md border border-gray-200 h-auto sm:h-[160px] flex flex-col justify-between">
+                {/* Testimonial Text */}
+                <p className="text-gray-700 mb-3 leading-relaxed flex-1 text-xs sm:text-sm line-clamp-3 sm:line-clamp-none">
+                  "{testimonial.text}"
+                </p>
 
-        {/* Author Section */}
-        <div className="flex items-center space-x-4 mt-auto">
-          <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-            <span className="text-md font-bold text-blue-700">
-              {testimonial.author
-                .split(" ")
-                .map((word) => word[0])
-                .join("")}
-            </span>
-          </div>
-          <div>
-            <h3 className="font-semibold text-[#1a365d] text-base">
-              {testimonial.author}
-            </h3>
-            <p className="text-gray-500 text-xs">{testimonial.role}</p>
-          </div>
+                {/* Author Section */}
+                <div className="flex items-center space-x-2 sm:space-x-4 mt-auto">
+                  <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-blue-100 flex items-center justify-center">
+                    <span className="text-sm sm:text-md font-bold text-blue-700">
+                      {testimonial.author
+                        .split(" ")
+                        .map((word) => word[0])
+                        .join("")}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[#1a365d] text-sm sm:text-base">
+                      {testimonial.author}
+                    </h3>
+                    <p className="text-gray-500 text-xs">{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-    </div>
-  ))}
-</div>
       </div>
     </div>
   );
