@@ -15,7 +15,7 @@ export default function App() {
           <div className="bg-white bg-opacity-90 backdrop-blur-sm rounded-lg py-2 px-4 flex justify-between items-center shadow-sm border transition-all duration-300">
             <div className="flex items-center gap-2">
               <img
-                src="/src/assets/profile-v1.png"
+                src="/profile-v1.png"
                 alt="OpenIntervue Logo"
                 width={24}
                 height={24}

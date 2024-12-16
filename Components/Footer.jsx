@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-6">
               <div className="w-8 h-8 rounded-full flex items-center justify-center">
                 <img
-                  src="/src\assets\profile-v1.png"
+                  src="/profile-v1.png"
                   alt="OpenIntervue Logo"
                   width={24}
                   height={24}

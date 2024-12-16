@@ -27,7 +27,7 @@ export default function FaceDetectionCard() {
           
           {/* Image */}
           <img
-            src="/src\assets\a-business-man-stands-against-white-background-with-his-arms-crossed-ai-generative-photo.jpg"
+            src="/a-business-man-stands-against-white-background-with-his-arms-crossed-ai-generative-photo.jpg"
             alt="Face Detection Preview"
             className="w-full h-full object-cover"
           />
